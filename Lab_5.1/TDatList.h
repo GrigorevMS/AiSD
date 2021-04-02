@@ -22,6 +22,12 @@ public:
 	TDatList(TDatValue** list, int listlen); // конструктор преобразования типов
 	~TDatList(); // деструктор
 
+	// Get
+	TDatLink* GetFirst(void); // получить первый
+	TDatLink* GetLast(void); // получить последний
+	TDatLink* GetCurr(void); // получить текущий
+	TDatLink* GetPrev(void); // получить предыдущий
+
 	// доступ
 	TDatValue* GetValue(int mode = 1) const; // получить значение( 0 - предыдущего, 1 - текущего, 2 - следующего )
 	int GetListLen(void) const; // получить длину

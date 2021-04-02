@@ -1,0 +1,64 @@
+cout << "Тестирование полинома..." << endl;
+	{
+		cout << "Тест 1. Оператор сложения (example)" << endl;
+		float ms1_coeff[] = { 1.0, 3.0, 5.0, 7.0 , 9.0 };
+		int ms1_index[] = { 543, 432, 321, 210, 100 };
+		int ms1_size = 5;
+		/*int ms1[][2] = { {1, 543}, {3, 432}, {5, 321}, {7, 210}, {9, 100} };
+		int mn1 = sizeof(ms1) / (2 * sizeof(int));*/
+		TPolinom p(ms1_coeff, ms1_index, ms1_size);
+		cout << "1 полином" << endl << p;
+
+		float ms2_coeff[] = { 2.0, 4.0, -5.0, 8.0, 10.0 };
+		int ms2_index[] = { 643, 432, 321, 110, 50 };
+		int ms2_size = 5;
+		/*int ms2[][2] = { {2, 643}, {4, 432}, {-5, 321}, {8, 110}, {10, 50} };
+		int mn2 = sizeof(ms2) / (2 * sizeof(int));*/
+		TPolinom q(ms2_coeff, ms2_index, ms2_size);
+		cout << "2 полином" << endl << q;
+
+		TPolinom r = p + q;
+
+		cout << endl;
+		cout << "Expected: 2.000000(643) 1.000000(543) 7.000000(432) 7.000000(210) 8.000000(110) 9.000000(100) 10.000000(50)" << endl;
+		cout << "Actual:   " << r << endl << endl;
+
+
+
+		cout << "Тест 2. Оператор присваивания (example)" << endl;
+		TPolinom s;
+		s = r;
+		cout << "Expected: 2.000000(643) 1.000000(543) 7.000000(432) 7.000000(210) 8.000000(110) 9.000000(100) 10.000000(50)" << endl;
+		cout << "Actual:   " << s << endl << endl;
+
+
+
+		cout << "Тест 3. Конструктор копирования (example)" << endl;
+		TPolinom с(r);
+		cout << "Expected: 2.000000(643) 1.000000(543) 7.000000(432) 7.000000(210) 8.000000(110) 9.000000(100) 10.000000(50)" << endl;
+		cout << "Actual:   " << с << endl << endl;
+	}
+	{
+		cout << "Тест 4. Оператор сложения + вывод пустого полинома" << endl;
+		float ms1_coeff[] = { 1.0, 3.0 };
+		int ms1_index[] = { 543, 432 };
+		int ms1_len = 2;
+		/*int ms1[][2] = { {1, 543}, {3, 432} };
+		int mn1 = sizeof(ms1) / (2 * sizeof(int));*/
+		TPolinom p(ms1_coeff, ms1_index, ms1_len);
+		cout << "1 полином" << endl << p;
+
+		float ms2_coeff[] = { -1.0, -3.0 };
+		int ms2_index[] = { 543, 432 };
+		int ms2_len = 2;
+		/*int ms2[][2] = { {-1, 543}, {-3, 432} };
+		int mn2 = sizeof(ms2) / (2 * sizeof(int));*/
+		TPolinom q(ms2_coeff, ms2_index, ms2_len);
+		cout << "2 полином" << endl << q;
+
+		TPolinom r = p + q;
+
+		cout << endl;
+		cout << "Expected: " << endl;
+		cout << "Actual:   " << r << endl << endl;
+	}

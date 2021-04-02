@@ -27,6 +27,26 @@ TDatList::~TDatList() {
 	DelList();
 }
 
+// получить первый
+TDatLink* TDatList::GetFirst(void) {
+	return this->pFirst;
+}
+
+// получить последний
+TDatLink* TDatList::GetLast(void) {
+	return this->pLast;
+}
+
+// получить текущий
+TDatLink* TDatList::GetCurr(void) {
+	return this->pCurr;
+}
+
+// получить предыдущий
+TDatLink* TDatList::GetPrev(void) {
+	return this->pPrev;
+}
+
 // получить значение( 0 - первого, 1 - текущего, 2 - последнего )
 TDatValue* TDatList::GetValue(int mode) const {
 	if (mode == 0)
@@ -35,6 +55,8 @@ TDatValue* TDatList::GetValue(int mode) const {
 		return this->pCurr->GetValue();
 	else if (mode == 2)
 		return this->pLast->GetValue();
+	else
+		return nullptr;
 }
 
 // получить длину

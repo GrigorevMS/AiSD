@@ -151,6 +151,8 @@
     <ClCompile Include="TDatLink.cpp" />
     <ClCompile Include="TDatList.cpp" />
     <ClCompile Include="TItemValue.cpp" />
+    <ClCompile Include="TMonom.cpp" />
+    <ClCompile Include="TPolinom.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
