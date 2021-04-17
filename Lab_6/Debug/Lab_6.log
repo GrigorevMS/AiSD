@@ -1,0 +1,10 @@
+﻿  TStack.cpp
+  TStack.h
+  main.cpp
+  Создание кода...
+Debug\TStack.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall TStack<int>::TStack<int>(int)" (??0?$TStack@H@@QAE@H@Z) в функции _main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __thiscall TStack<int>::~TStack<int>(void)" (??1?$TStack@H@@QAE@XZ) в функции _main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __thiscall TStack<int>::Put(int)" (?Put@?$TStack@H@@QAEXH@Z) в функции _main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: int __thiscall TStack<int>::Get(void)" (?Get@?$TStack@H@@QAEHXZ) в функции _main.
+D:\Рабочий стол\ИИП\Lab_6\Debug\Lab_6.exe : fatal error LNK1120: неразрешенных внешних элементов: 4
