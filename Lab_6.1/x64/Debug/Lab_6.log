@@ -1,0 +1,3 @@
+﻿  main.cpp
+D:\Рабочий стол\ИИП\Lab_6\main.cpp(75,9): warning C4101: text_link_copy: неиспользованная локальная переменная
+  Lab_6.vcxproj -> D:\Рабочий стол\ИИП\Lab_6\x64\Debug\Lab_6.exe
