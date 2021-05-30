@@ -1,2 +1,4 @@
 D:\Рабочий стол\ИИП\Lab_8\x64\Debug\Lab_8.exe
 D:\Рабочий стол\ИИП\Lab_8\x64\Debug\Lab_8.pdb
+D:\Рабочий стол\ИИП\AiSD\Lab_8\x64\Debug\Lab_8.exe
+D:\Рабочий стол\ИИП\AiSD\Lab_8\x64\Debug\Lab_8.pdb

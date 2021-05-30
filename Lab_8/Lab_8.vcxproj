@@ -139,20 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ExtraFunctions.h" />
     <ClInclude Include="TArrayTable.h" />
     <ClInclude Include="TDataCom.h" />
     <ClInclude Include="TDatValue.h" />
     <ClInclude Include="TScanTable.h" />
+    <ClInclude Include="TSortTable.h" />
     <ClInclude Include="TTable.h" />
     <ClInclude Include="TTabRecord.h" />
     <ClInclude Include="TWord.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ExtraFunctions.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="TArrayTable.cpp" />
     <ClCompile Include="TDataCom.cpp" />
     <ClCompile Include="TDatValue.cpp" />
     <ClCompile Include="TScanTable.cpp" />
+    <ClCompile Include="TSortTable.cpp" />
     <ClCompile Include="TTable.cpp" />
     <ClCompile Include="TTabRecord.cpp" />
     <ClCompile Include="TWord.cpp" />

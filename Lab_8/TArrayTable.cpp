@@ -39,28 +39,40 @@ TDatValue* TArrayTable::GetpValue(void) const {
 
 
 // получить ключ текущей записи
-TKey TArrayTable::GetKey(TDataPos mode) const {
+TKey TArrayTable::GetKey(int mode) const {
 	int OutPos = 0;
-	if (mode == FIRST_POS)
+	if (mode == 1)
 		OutPos = 0;
-	else if (mode == CURRENT_POS)
+	else if (mode == 0)
 		OutPos = this->CurrPos;
-	else if (mode == LAST_POS)
+	else if (mode == 2)
 		OutPos = this->DataCount - 1;
 	return this->pRecs[OutPos].GetKey();
 }
 
 
 // получить указатель на аргументы записи
-TDatValue* TArrayTable::GetpValue(TDataPos mode) const {
+TDatValue* TArrayTable::GetpValue(int mode) const {
 	int OutPos = 0;
-	if (mode == FIRST_POS)
+	if (mode == 1)
 		OutPos = 0;
-	else if (mode == CURRENT_POS)
+	else if (mode == 0)
 		OutPos = this->CurrPos;
-	else if (mode == LAST_POS)
+	else if (mode == 2)
 		OutPos = this->DataCount - 1;
 	return this->pRecs[OutPos].GetpValue();
+}
+
+
+// получить максимальный размер таблицы
+int TArrayTable::GetSize(void) const {
+	return this->TabSize;
+}
+
+
+// установить максимальный размер таблицы
+void TArrayTable::SetSize(int size_copy) {
+	this->TabSize = size_copy;
 }
 
 

@@ -2,29 +2,7 @@
 #include<fstream>
 #include<string>
 #include"TScanTable.h"
-
-
-// Вспомогательная функция
-void SepScan(std::string input, std::string* mas, int count = 3) {
-	for (int i = 0; i < count; i++) {
-		mas[i] = "";
-	}
-	int high = 0; // индекс выходного массива с готовыми строками
-	int pos = 0; // индекс для прохождения входной строки
-	std::string temp = "";
-	while (pos < input.size() && high < count) {
-		temp = "";
-		while (input[pos] != ' ' && pos < input.size()) {
-			temp = temp + input[pos];
-			pos += 1;
-		}
-		mas[high] = temp;
-		high += 1;
-		while (input[pos] == ' ' && pos < input.size()) {
-			pos += 1;
-		}
-	}
-}
+#include"ExtraFunctions.h"
 
 
 // конструктор класса
@@ -135,7 +113,7 @@ void TScanTable::Read(std::string pFileName) {
 
 	// Читаем название колонок
 	getline(fin, temp);
-	SepScan(temp, mas, columncount_copy);
+	Sep(temp, mas, columncount_copy);
 	delete[] this->GetColumnName();
 	this->SetColumnName(mas);
 
@@ -146,7 +124,7 @@ void TScanTable::Read(std::string pFileName) {
 		getline(fin, key_copy); 
 		// Читаем аргументы
 		getline(fin, temp); 
-		SepScan(temp, mas, columncount_copy);
+		Sep(temp, mas, columncount_copy);
 		this->InsRecord(key_copy, new TWord(mas, columncount_copy));
 	}
 }

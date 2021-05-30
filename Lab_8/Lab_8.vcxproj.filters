@@ -31,6 +31,12 @@
     <Filter Include="Исходные файлы\TTable\TArrayTable">
       <UniqueIdentifier>{28174e7e-36ce-460b-84c9-9f473b285e72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Functions">
+      <UniqueIdentifier>{1b6a6520-c4c1-4d38-a576-577fe6fc96bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Functions">
+      <UniqueIdentifier>{acac5d7e-6fab-4ab0-9974-b72f38138460}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TDatValue.h">
@@ -53,6 +59,12 @@
     </ClInclude>
     <ClInclude Include="TScanTable.h">
       <Filter>Файлы заголовков\TTable\TArraytable</Filter>
+    </ClInclude>
+    <ClInclude Include="TSortTable.h">
+      <Filter>Файлы заголовков\TTable\TArraytable</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtraFunctions.h">
+      <Filter>Файлы заголовков\Functions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +91,12 @@
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="TSortTable.cpp">
+      <Filter>Исходные файлы\TTable\TArrayTable</Filter>
+    </ClCompile>
+    <ClCompile Include="ExtraFunctions.cpp">
+      <Filter>Исходные файлы\Functions</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

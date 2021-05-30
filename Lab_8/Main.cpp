@@ -1,32 +1,13 @@
+#pragma once
 #include<iostream>
 #include<string>
 #include<cstdlib>
 #include"TDatValue.h"
 #include"TTable.h"
 #include"TScanTable.h"
+#include"TSortTable.h"
+#include"ExtraFunctions.h"
 using namespace std;
-
-
-void Sep(string input, string* mas, int count = 3) {
-	for (int i = 0; i < count; i++) {
-		mas[i] = "";
-	}
-	int high = 0; // индекс выходного массива с готовыми строками
-	int pos = 0; // индекс для прохождения входной строки
-	string temp = "";
-	while (pos < input.size() && high < count) {
-		temp = "";
-		while (input[pos] != ' ' && pos < input.size()) {
-			temp = temp + input[pos];
-			pos += 1;
-		}
-		mas[high] = temp;
-		high += 1;
-		while (input[pos] == ' ' && pos < input.size()) {
-			pos += 1;
-		}
-	}
-}
 
 
 void ShowCommands(void) {
@@ -42,6 +23,7 @@ void ShowCommands(void) {
 	cout << "    " << " delete" << " - delete record from Table" << endl;
 	cout << "    " << " find" << " - find record in Table" << endl;
 	cout << endl;
+	cout << "    " << " info" << " - show info about Table" << endl;
 	cout << "    " << " quit" << " - close the app" << endl;
 }
 
@@ -68,7 +50,7 @@ int main() {
 
 	}*/
 	Sep(input_of_commandline, columnname, pValue_count);
-	Table = new TScanTable(50, pValue_count, columnname); // этой строкой определяется используеммый тип таблицы
+	Table = new TSortTable(50, pValue_count, columnname); // этой строкой определяется используеммый тип таблицы
 
 
 	cout << endl;
@@ -131,9 +113,9 @@ int main() {
 				getline(cin, input_of_commandline);
 				getline(cin, input_of_commandline);
 
-				values = new string[pValue_count];
-				Sep(input_of_commandline, values, pValue_count);
-				Table->InsRecord(Key, new TWord(values, pValue_count));
+				values = new string[Table->GetColumnCount()];
+				Sep(input_of_commandline, values, Table->GetColumnCount());
+				Table->InsRecord(Key, new TWord(values, Table->GetColumnCount()));
 
 				finish_code = Table->GetRetCode();
 				if (finish_code == 0) // OK
@@ -201,6 +183,17 @@ int main() {
 				cout << " FIND 1 0";
 				cout << endl;
 			}
+		}
+
+		else if (mas[0] == "info") {
+			cout << " RetCode: "; // код завершения операции
+			cout << Table->GetRetCode() << endl;
+			cout << " DataCount: "; // количество записей в таблице
+			cout << Table->GetDataCount() << endl;
+			cout << " ColumnCount: ";// количество колонок таблицы
+			cout << Table->GetColumnCount() << endl;
+			cout << " Efficiency: "; // показатель эффективности выполнения операции
+			cout << Table->GetEfficiency() << endl;
 		}
 
 		else if (mas[0] == "quit") {
