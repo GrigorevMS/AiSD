@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\TDatValue">
+      <UniqueIdentifier>{3d998bdf-df5b-4361-80ad-97e36a14532e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\TTable">
+      <UniqueIdentifier>{478ee224-0f21-4670-a7a3-4b55553a37de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\TDatValue">
+      <UniqueIdentifier>{b8bc1e0d-5403-4422-8551-1e91620fe6a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\TTable">
+      <UniqueIdentifier>{483019d4-a20b-49d1-a9ad-dfab46282d40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\TTable\TArraytable">
+      <UniqueIdentifier>{87743453-bd46-4c74-95cd-a6299e3eea20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\TTable\TArrayTable">
+      <UniqueIdentifier>{28174e7e-36ce-460b-84c9-9f473b285e72}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TDatValue.h">
+      <Filter>Файлы заголовков\TDatValue</Filter>
+    </ClInclude>
+    <ClInclude Include="TTabRecord.h">
+      <Filter>Файлы заголовков\TDatValue</Filter>
+    </ClInclude>
+    <ClInclude Include="TDataCom.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="TTable.h">
+      <Filter>Файлы заголовков\TTable</Filter>
+    </ClInclude>
+    <ClInclude Include="TWord.h">
+      <Filter>Файлы заголовков\TDatValue</Filter>
+    </ClInclude>
+    <ClInclude Include="TArrayTable.h">
+      <Filter>Файлы заголовков\TTable\TArraytable</Filter>
+    </ClInclude>
+    <ClInclude Include="TScanTable.h">
+      <Filter>Файлы заголовков\TTable\TArraytable</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TDatValue.cpp">
+      <Filter>Исходные файлы\TDatValue</Filter>
+    </ClCompile>
+    <ClCompile Include="TTabRecord.cpp">
+      <Filter>Исходные файлы\TDatValue</Filter>
+    </ClCompile>
+    <ClCompile Include="TDataCom.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="TTable.cpp">
+      <Filter>Исходные файлы\TTable</Filter>
+    </ClCompile>
+    <ClCompile Include="TWord.cpp">
+      <Filter>Исходные файлы\TDatValue</Filter>
+    </ClCompile>
+    <ClCompile Include="TArrayTable.cpp">
+      <Filter>Исходные файлы\TTable\TArrayTable</Filter>
+    </ClCompile>
+    <ClCompile Include="TScanTable.cpp">
+      <Filter>Исходные файлы\TTable\TArrayTable</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
