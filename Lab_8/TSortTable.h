@@ -40,7 +40,7 @@ public:
 				ключ
 				аргуметы
 	*/
-	virtual void Write(std::string pFileName) const; // сохранение Таблицы в файл
+	virtual void Write(std::string pFileName); // сохранение Таблицы в файл
 	/*
 		Формат файла:
 			Количество записей
@@ -51,6 +51,6 @@ public:
 				аргуметы
 	*/
 
-	virtual void Print(std::ostream& out = std::cout) const; // вывод таблицы в консоль
-	virtual void PrintHead(std::ostream& out = std::cout) const; // вывести названия столбцов Таблицы ( шапку )
+	virtual void Print(std::ostream& out = std::cout); // вывод таблицы в консоль
+	virtual void PrintHead(std::ostream& out = std::cout); // вывести названия столбцов Таблицы ( шапку )
 };

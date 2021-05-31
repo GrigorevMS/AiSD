@@ -7,6 +7,7 @@
 #include"TScanTable.h"
 #include"TSortTable.h"
 #include"ExtraFunctions.h"
+#include"TTreeTable.h"
 using namespace std;
 
 
@@ -50,7 +51,8 @@ int main() {
 
 	}*/
 	Sep(input_of_commandline, columnname, pValue_count);
-	Table = new TSortTable(50, pValue_count, columnname); // этой строкой определяется используеммый тип таблицы
+	//Table = new TSortTable(50, pValue_count, columnname); // этой строкой определяется используеммый тип таблицы
+	Table = new TTreeTable(pValue_count, columnname); // этой строкой определяется используеммый тип таблицы
 
 
 	cout << endl;

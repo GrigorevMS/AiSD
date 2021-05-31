@@ -140,7 +140,7 @@ void TScanTable::Read(std::string pFileName) {
 				ключ
 				аргуметы
 */
-void TScanTable::Write(std::string pFileName) const {
+void TScanTable::Write(std::string pFileName) {
 	std::ofstream fout;
 	fout.open(pFileName);
 
@@ -166,7 +166,7 @@ void TScanTable::Write(std::string pFileName) const {
 
 
 // вывод таблицы в консоль
-void TScanTable::Print(std::ostream& out) const {
+void TScanTable::Print(std::ostream& out) {
 	this->PrintHead();
 	for (int i = 0; i < this->DataCount; i++) {
 		out << this->pRecs[i].ToStr() << std::endl;
@@ -174,7 +174,7 @@ void TScanTable::Print(std::ostream& out) const {
 }
 
 // вывести названия столбцов Таблицы ( шапку )
-void TScanTable::PrintHead(std::ostream& out) const {
+void TScanTable::PrintHead(std::ostream& out) {
 	out << '|';
 	for (int j = 0; j < WIDTH - 3; j++) {
 		out << " ";

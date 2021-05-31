@@ -145,8 +145,11 @@
     <ClInclude Include="TDatValue.h" />
     <ClInclude Include="TScanTable.h" />
     <ClInclude Include="TSortTable.h" />
+    <ClInclude Include="TStack.h" />
     <ClInclude Include="TTable.h" />
     <ClInclude Include="TTabRecord.h" />
+    <ClInclude Include="TTreeNode.h" />
+    <ClInclude Include="TTreeTable.h" />
     <ClInclude Include="TWord.h" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +162,8 @@
     <ClCompile Include="TSortTable.cpp" />
     <ClCompile Include="TTable.cpp" />
     <ClCompile Include="TTabRecord.cpp" />
+    <ClCompile Include="TTreeNode.cpp" />
+    <ClCompile Include="TTreeTable.cpp" />
     <ClCompile Include="TWord.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -64,6 +64,11 @@ public:
 	virtual TKey GetKey(void) const = 0; // получить ключ записи
 	virtual TDatValue* GetpValue(void) const = 0; // получить указатель на аргументы записи
 
+	// навигация
+	virtual void Reset(void) = 0; // установить номер текущей позиции на первую запись
+	virtual bool IsTabEnded(void) const = 0; // номер текущей позиции на последней записи?
+	virtual bool GoNext(void) = 0; // переместить номер текущей записи на следующую запись
+
 	// основные методы
 	virtual TDatValue* FindRecord(TKey key_copy) = 0; // найти запись по ключу
 	virtual void InsRecord(TKey key_copy, TDatValue* pvalue_copy) = 0; // вставить запись в таблицу
@@ -71,9 +76,9 @@ public:
 
 	// методы ввода-вывода
 	virtual void Read(std::string pFileName)  = 0; // ввод Таблицы из файла
-	virtual void Write(std::string pFileName) const = 0; // сохранение Таблицы в файл
+	virtual void Write(std::string pFileName) = 0; // сохранение Таблицы в файл
 
-	virtual void Print(std::ostream& out = std::cout) const = 0; // вывод таблицы в консоль
-	virtual void PrintHead(std::ostream& out = std::cout) const = 0; // вывести названия столбцов Таблицы ( шапку )
+	virtual void Print(std::ostream& out = std::cout) = 0; // вывод таблицы в консоль
+	virtual void PrintHead(std::ostream& out = std::cout) = 0; // вывести названия столбцов Таблицы ( шапку )
 
 };

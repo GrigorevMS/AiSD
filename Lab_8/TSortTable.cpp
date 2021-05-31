@@ -154,7 +154,7 @@ void TSortTable::Read(std::string pFileName) {
 			ключ
 			аргуметы
 */
-void TSortTable::Write(std::string pFileName) const {
+void TSortTable::Write(std::string pFileName) {
 	std::ofstream fout;
 	fout.open(pFileName);
 
@@ -179,8 +179,8 @@ void TSortTable::Write(std::string pFileName) const {
 
 
 // вывод таблицы в консоль
-void TSortTable::Print(std::ostream& out) const {
-	this->PrintHead();
+void TSortTable::Print(std::ostream& out) {
+	this->PrintHead(out);
 	for (int i = 0; i < this->DataCount; i++) {
 		out << this->pRecs[i].ToStr() << std::endl;
 	}
@@ -188,7 +188,7 @@ void TSortTable::Print(std::ostream& out) const {
 
 
 // вывести названия столбцов Таблицы ( шапку )
-void TSortTable::PrintHead(std::ostream& out) const {
+void TSortTable::PrintHead(std::ostream& out) {
 	out << '|';
 	for (int j = 0; j < WIDTH - 3; j++) {
 		out << " ";

@@ -37,6 +37,12 @@
     <Filter Include="Исходные файлы\Functions">
       <UniqueIdentifier>{acac5d7e-6fab-4ab0-9974-b72f38138460}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\TTable\TTreeTable">
+      <UniqueIdentifier>{02986dc3-9252-4ccb-8e4b-ee656771816d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\TTable\TTreeTable">
+      <UniqueIdentifier>{96f74a9b-8c9e-42c1-87b2-a5ed6c759906}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TDatValue.h">
@@ -65,6 +71,15 @@
     </ClInclude>
     <ClInclude Include="ExtraFunctions.h">
       <Filter>Файлы заголовков\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="TTreeNode.h">
+      <Filter>Файлы заголовков\TDatValue</Filter>
+    </ClInclude>
+    <ClInclude Include="TTreeTable.h">
+      <Filter>Файлы заголовков\TTable\TTreeTable</Filter>
+    </ClInclude>
+    <ClInclude Include="TStack.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +112,12 @@
     </ClCompile>
     <ClCompile Include="ExtraFunctions.cpp">
       <Filter>Исходные файлы\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="TTreeNode.cpp">
+      <Filter>Исходные файлы\TDatValue</Filter>
+    </ClCompile>
+    <ClCompile Include="TTreeTable.cpp">
+      <Filter>Исходные файлы\TTable\TTreeTable</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
