@@ -115,7 +115,92 @@ void TTreeTable::InsRecord(TKey key_copy, TDatValue* pvalue_copy) {
 
 // удалить запись по ключу
 void TTreeTable::DelRecord(TKey key_copy) {
+	if (this->FindRecord(key_copy) != nullptr) {
 
+		TTreeNode* cursor = this->pRoot;
+		TTreeNode* cursor_father = nullptr;
+
+		// ищем вершину которую нужно удалить
+		while (cursor->GetKey() != key_copy) {
+			cursor_father = cursor;
+			if (key_copy < cursor->GetKey()) {
+				cursor = cursor->GetLeft();
+			}
+			else if (cursor->GetKey() < key_copy) {
+				cursor = cursor->GetRight();
+			}
+		}
+
+		TTreeNode* zamena = nullptr;
+		TTreeNode* zamena_father = nullptr;
+
+		// ищем вершину на замену
+		// если есть "левое" поддерево, то выбираем из него самую правую вершину
+		if (cursor->GetLeft() != nullptr) {
+			zamena = cursor->GetLeft();
+			zamena_father = cursor;
+
+			while (zamena->GetRight() != nullptr) {
+				zamena_father = zamena;
+				zamena = zamena->GetRight();
+			}
+
+			if (zamena_father != cursor) {
+				cursor->SetpValue(zamena->GetpValue()->GetCopy());
+				cursor->SetKey(zamena->GetKey());
+				zamena_father->SetRight(zamena->GetLeft());
+				delete zamena;
+			}
+			else {
+				cursor->SetpValue(zamena->GetpValue()->GetCopy());
+				cursor->SetKey(zamena->GetKey());
+				zamena_father->SetLeft(zamena->GetLeft());
+				delete zamena;
+			}
+		}
+		// если есть "правое" поддерево, то выбираем из него самую левую вершину
+		else if (cursor->GetRight() != nullptr) {
+			zamena = cursor->GetRight();
+			zamena_father = cursor;
+
+			while (zamena->GetLeft() != nullptr) {
+				zamena_father = zamena;
+				zamena = zamena->GetLeft();
+			}
+
+			if (zamena_father != cursor) {
+				cursor->SetpValue(zamena->GetpValue()->GetCopy());
+				cursor->SetKey(zamena->GetKey());
+				zamena_father->SetLeft(zamena->GetRight());
+				delete zamena;
+			}
+			else {
+				cursor->SetpValue(zamena->GetpValue()->GetCopy());
+				cursor->SetKey(zamena->GetKey());
+				zamena_father->SetRight(zamena->GetRight());
+				delete zamena;
+			}
+		}
+		else {
+			if (cursor == this->pRoot) {
+				delete cursor;
+				this->pRoot = nullptr;
+			}
+			else {
+				if (cursor_father->GetLeft() == cursor) {
+					cursor_father->SetLeft(nullptr);
+				}
+				else if (cursor_father->GetRight() == cursor) {
+					cursor_father->SetRight(nullptr);
+				}
+				delete cursor;
+			}
+		}
+		this->RetCode = 0; // OK
+	}
+	else {
+		this->RetCode = 2; // NO_SUCH_RECORD
+	}
 }
 
 
